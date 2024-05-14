@@ -33,8 +33,7 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            background-color: rgba(239, 213, 174, 0.799);
-            <!-- url(naturephoto.jpg)no-repeat; -->
+            background-color: rgba(230, 185, 148, 0.799);
             background-size: cover;
             background-position: center;
         }
@@ -43,7 +42,7 @@
             position: relative;
             top: 0;
             width: 100%;
-            padding: 60px 100px;
+            padding: 60px 60px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -81,7 +80,7 @@
 
         .content {
             max-width: 550px;
-            margin: 60px 100px;
+            margin: 60px 50px;
         }
 
         .content .info h2 {
@@ -95,6 +94,7 @@
         }
 
         .content .info h2 span {
+            text-transform: lowercase;
             color: #061702;
             font-size: 50px;
             font-weight: 600;
@@ -120,7 +120,7 @@
         }
 
         .content .info-btn:hover {
-            background: #917ce5;
+            background: #c7cd78;
         }
 
         .media-icons {
@@ -134,8 +134,8 @@
         .media-icons a {
             position: relative;
             color: #111;
-            font-size: 25px;
-            transition: 0.3s;
+            font-size: 35px;
+            transition: 0.5s;
             transition-property: transform;
         }
 
@@ -151,7 +151,7 @@
             display: none;
         }
 
-        #check {
+        #menu-toggle {
             z-index: 3;
             display: none;
         }
@@ -179,7 +179,7 @@
                 display: none;
             }
 
-            #check:checked~header .navigation {
+            #menu-toggle:checked~header .navigation {
                 z-index: 2;
                 position: fixed;
                 background: rgba(239, 213, 174, 0.9);
@@ -193,18 +193,18 @@
                 align-items: center;
             }
 
-            #check:checked~header .navigation a {
+            #menu-toggle:checked~header .navigation a {
                 font-weight: 700;
                 margin-right: 0;
                 margin-bottom: 50px;
                 letter-spacing: 2px;
             }
 
-            #check:checked~header label .menu-btn{
+            #menu-toggle:checked~header label .menu-btn{
                 display: none;
             }
 
-            #check:checked~header label .close-btn{
+            #menu-toggle:checked~header label .close-btn{
                 z-index: 2;
                 display: block;
                 position: fixed;
@@ -245,7 +245,7 @@
 
             .content .info h2 span {
                 font-size: 30px;
-                font-weight: 600;
+                font-weight: 610;
             }
 
             .content .info p {
@@ -257,9 +257,9 @@
 
 <body>
     <section>
-        <input type="checkbox" id="check">
+        <input type="checkbox" id="menu-toggle">
         <header>
-            <h2><a href="https://surfaceinterfacescience.github.io" class="logo">SISL</a></h2>
+            <h2><a href="https://surfaceinterfacescience.github.io" class="logo">S!S</a></h2>
             <div class="navigation">
                 <a href="#">Home</a>
                 <a href="#">About</a>
@@ -269,7 +269,7 @@
                 <a href="#">Contact</a>
             </div>
             
-            <label for="check">
+            <label for="menu-toggle">
                 <i class="fas fa-bars menu-btn"></i>
                 <i class="fas fa-times close-btn"></i>
             </label>
@@ -287,7 +287,8 @@
         </div>
         <div class="media-icons">
             <!-- <a href="#"><i class="fab fa-facebook-f"></i></a> -->
-            <a href="#"><i class="fa-solid fa-envelope"></i></a>
+            <a href="mailto:maniraj@iitb.ac.in"><i class="fa-solid fa-envelope"></i> </a>
+
             
         </div>
     </section>
