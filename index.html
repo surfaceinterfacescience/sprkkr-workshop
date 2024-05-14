@@ -1,25 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S5FFBY7ZGM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-S5FFBY7ZGM');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
+    <title>sprkkr-workshop-iitbombay</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <style>
-        body, html {
-            height: 100%;
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        section {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            background-color: rgba(239, 213, 174, 0.799);
+            <!-- url(naturephoto.jpg)no-repeat; -->
+            background-size: cover;
+            background-position: center;
+        }
+
+        header {
+            position: relative;
+            top: 0;
+            width: 100%;
+            padding: 60px 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            position: relative;
+            color: #5fb7d4;
+            font-size: 30px;
+            text-align: none;
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        header .navigation a {
+            color: #000;
+            background: #d1d677;
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 1px;
+            padding: 2px 15px;
+            border-radius: 20px;
+            transition: 1.9s;
+            transition-property: #9d4a4a;
+        }
+
+        header .navigation a:not(:last-child) {
+            margin-right: 25px;
+        }
+
+        header .navigation a:hover {
+            background: #6d66cd;
+        }
+
+        .content {
+            max-width: 550px;
+            margin: 60px 100px;
+        }
+
+        .content .info h2 {
+            color: rgb(109, 144, 232);
+            font-size: 55px;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 2px;
+            line-height: 60px;
+            margin-bottom: 30px;
+        }
+
+        .content .info h2 span {
+            color: #061702;
+            font-size: 50px;
+            font-weight: 600;
+        }
+
+        .content .info p {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 40px;
+        }
+
+        .content .info-btn {
+            color: #d36262;
+            background: #63ca6c;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 2px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: 0.3s;
+            transition-property: background;
+        }
+
+        .content .info-btn:hover {
+            background: #917ce5;
+        }
+
+        .media-icons {
+            /* for facebook */
             display: flex;
             justify-content: center;
             align-items: center;
-            text-align: center;
-            background-color: #f4f4f4;
+            margin: auto;
         }
-        h1 {
-            font-size: 36px;
+
+        .media-icons a {
+            position: relative;
+            color: #111;
+            font-size: 25px;
+            transition: 0.3s;
+            transition-property: transform;
+        }
+
+        .media-icons a:not(:last-child) {
+            margin-right: 60px;
+        }
+
+        .media-icons a:hover {
+            transform: scale(1.5);
+        }
+
+        label {
+            display: none;
+        }
+
+        #check {
+            z-index: 3;
+            display: none;
+        }
+
+        /* Responseive style */
+        @media (max-width: 960px) {
+           
+            header .navigation {
+                display: none;
+            }
+
+            label {
+                display: block;
+                font-size: 25px;
+                cursor: pointer;
+                transition: 0.3s;
+                transition-property: #a4d32d;
+            }
+
+            label:hover {
+                color: #6cbd46;
+            }
+
+            label .close-btn {
+                display: none;
+            }
+
+            #check:checked~header .navigation {
+                z-index: 2;
+                position: fixed;
+                background: rgba(239, 213, 174, 0.9);
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #check:checked~header .navigation a {
+                font-weight: 700;
+                margin-right: 0;
+                margin-bottom: 50px;
+                letter-spacing: 2px;
+            }
+
+            #check:checked~header label .menu-btn{
+                display: none;
+            }
+
+            #check:checked~header label .close-btn{
+                z-index: 2;
+                display: block;
+                position: fixed;
+            }
+
+            label .menu-btn {
+                position: absolute;
+            }
+
+            header .logo {
+                font-size: 26px;
+                font-weight: 550;
+                position: absolute;
+                bottom: 29px;
+            }
+
+            .content .info h2 {
+                font-size: 45px;
+                line-height: 50px;
+            }
+
+            .content .info h2 span {
+                font-size: 40px;
+                font-weight: 600;
+            }
+
+            .content .info p {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 560px) {
+            
+            .content .info h2 {
+                font-size: 35px;
+                line-height: 40px;
+            }
+
+            .content .info h2 span {
+                font-size: 30px;
+                font-weight: 600;
+            }
+
+            .content .info p {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
+
 <body>
-    <h1>Coming soon!</h1>
+    <section>
+        <input type="checkbox" id="check">
+        <header>
+            <h2><a href="https://surfaceinterfacescience.github.io" class="logo">SISL</a></h2>
+            <div class="navigation">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Event</a>
+                <a href="#">Speakers</a>
+                <a href="#">Schedule</a>
+                <a href="#">Contact</a>
+            </div>
+            
+            <label for="check">
+                <i class="fas fa-bars menu-btn"></i>
+                <i class="fas fa-times close-btn"></i>
+            </label>
+        </header>
+        <div class="content">
+            <div class="info">
+                <h2>SPR-KKR hands-on training workshop <br> <span>Want to take part?</span></h2>
+                <p>Prof. Jan Minar from the University of West Bohemia, Czech Republic, and <a href="https://surfaceinterfacescience.github.io">our group</a> from IIT Bombay will jointly conduct a hands-on workshop for the Munich <a href="https://www.ebert.cup.uni-muenchen.de/old/index.php?option=com_content&view=article&id=8%3Asprkkr&catid=4%3Asoftware&Itemid=7&lang=en">SPR-KKR</a> band structure program package code usage at IIT Bombay. The exact date will be updated soon on this website; tentatively, it will be during any week in August-September 2024. Please save this <a href="https://surfaceinterfacescience.github.io/sprkkr-workshop/">website</a> page for further updates.</p>
+
+<p>If you are interested in participating as a participant, feel free to <a href="https://surfaceinterfacescience.github.io/#contact">contact</a> me.</p>
+
+
+                <a href="#" class="info-btn">More Info</a>
+            </div>
+        </div>
+        <div class="media-icons">
+            <!-- <a href="#"><i class="fab fa-facebook-f"></i></a> -->
+            <a href="#"><i class="fa-solid fa-envelope"></i></a>
+            
+        </div>
+    </section>
 </body>
+
 </html>
