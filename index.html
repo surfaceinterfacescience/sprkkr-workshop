@@ -405,6 +405,43 @@
             font-weight: 600;
         }
 
+        /* Abstract toggle bar */
+        .abstract-toggle {
+            margin-top: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #0f3b5a;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Arrow animation */
+        .abstract-toggle .chev {
+            transition: transform 0.35s ease;
+        }
+
+        .abstract-toggle .chev.open {
+            transform: rotate(180deg);
+        }
+
+        /* Hidden abstract text */
+        .abstract-content {
+            font-size: 13px;
+            color: #333;
+            margin-top: 6px;
+            line-height: 1.5;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            max-height: 0;
+        }
+
+        .abstract-content.open {
+            max-height: 500px;
+            /* enough height for long abstracts */
+        }
+
         /* Responseive style */
         @media (max-width: 560px) {
 
@@ -485,6 +522,12 @@
             }
         }
 
+        @media (max-width: 560px) {
+            .speakers-grid {
+                grid-template-columns: 1fr;
+                /* stack vertically */
+            }
+        }
 
 
 
@@ -614,6 +657,24 @@
                             <div class="event-title">Talk: Prof. Didier Sébilleau (Offline)</div>
                             <div class="event-meta">Title: From Green's functions to real space multiple scattering
                             </div>
+
+
+                            <!-- Foldable Abstract -->
+                            <div class="abstract-toggle">
+                                <span>Abstract</span>
+                                <span class="chev">▾</span>
+                            </div>
+
+                            <div class="abstract-content closed">
+                                Starting from textbook results on partial waves, I will introduce Green's function
+                                (propagators), transition and scattering path operators. Then, I will apply this
+                                formalism to core-level spectroscopies, such as photoelectron diffraction, and show how
+                                to calculate the key ingredients in order to model the cross-section. Applications to
+                                photoelectron diffraction spectra will be made in the hands-on course.
+                            </div>
+
+
+
                         </div>
                     </div>
 
@@ -624,8 +685,70 @@
                             <div class="event-title">Talk: Prof. Jan Minár (online) </div>
                             <div class="event-meta">Title: Quantum Materials and Magnetic Phenomena Studied by
                                 Spin-Resolved ARPES: Theoretical perspectives</div>
+
+
+                            <!-- Foldable Abstract -->
+                            <div class="abstract-toggle">
+                                <span>Abstract</span>
+                                <span class="chev">▾</span>
+                            </div>
+
+                            <div class="abstract-content closed">
+                                Quantum materials exhibit a complex interplay between electronic correlations, topology,
+                                and magnetism, placing them at the forefront of condensed matter physics and quantum
+                                technology. Understanding these systems requires disentangling spin-orbit coupling,
+                                electron-electron interactions, and magnetic fluctuations under realistic conditions,
+                                including finite temperatures and structural disorder. Spin- and time-resolved
+                                angle-resolved photoemission spectroscopy (STARPES) is a crucial technique for probing
+                                electronic and spin structures in magnetic and topological materials. However,
+                                quantitative interpretation of spin-ARPES data necessitates advanced theoretical models
+                                that accurately capture electronic states, spin textures, and dynamic responses to
+                                external fields.
+                                I will present a theoretical framework based on the fully relativistic
+                                multiple-scattering Green function KKR method [1], effectively modeling spin-dependent
+                                photoemission. This approach includes correlation effects via dynamical mean-field
+                                theory (DMFT) [2] and describes spin fluctuations using the alloy analogy model [3]. I
+                                will also discuss advances in calculating light-induced electronic excitations [4],
+                                highlighting their relevance to spin-ARPES studies of topological and magnetic quantum
+                                materials.
+                                A novel application is the one-step model of photoemission in studying altermagnets and
+                                kagome magnetic materials. Altermagnets, exhibiting unconventional time-reversal
+                                symmetry breaking without net magnetization, are explored in RuO2 and MnTe [5,6].
+                                Spin-ARPES combined with the one-step model provides insights into lifted Kramers spin
+                                degeneracy, revealing their potential for spintronics. In kagome magnetic materials,
+                                persistent flat band splitting and selective band renormalization are observed in FeSn
+                                thin films [7], highlighting unique correlation effects and topological phenomena. These
+                                developments offer a comprehensive framework for exploring magnetic phenomena and spin
+                                dynamics in complex quantum materials.
+                                References:
+                                <p>[1] H. Ebert et al., Rep. Prog. Phys. 74, 096501 (2011). DOI:
+                                    10.1088/0034-4885/74/9/096501</p>
+
+                                <p>[2] J. Minár, J. Phys.: Condens. Matter 23, 253201 (2011). DOI:
+                                    10.1088/0953-8984/23/25/253201</p>
+
+                                <p>[3] J. Minár et al., Phys. Rev. B 102, 035107 (2020). DOI:
+                                    10.1103/PhysRevB.102.035107</p>
+
+                                <p>[4] J. Braun et al., Physics Reports 749, 1 (2018). DOI:
+                                    10.1016/j.physrep.2018.02.007</p>
+
+                                <p>[5] J. Krempaský et al., Nature 626, 517 (2024). DOI: 10.1038/s41586-023-06907-7</p>
+
+                                <p>[6] O. Fedchenko et al., Sci. Adv. 10, eadj4883 (2024). DOI: 10.1126/sciadv.adj4883
+                                </p>
+
+                                <p>[7] Z. Ren et al., Nature Communications 15, 9376 (2024). DOI:
+                                    0.1038/s41467-024-53722-3</p>
+
+
+                            </div>
+
+
+
                         </div>
                     </div>
+
 
                     <div class="timeline-item">
                         <div class="timeline-time">16:00 – 16:30</div>
@@ -717,10 +840,10 @@
 
 
                     <div class="timeline-item">
-                        <div class="timeline-time">13:30 – 15:45</div>
+                        <div class="timeline-time">13:30 – 17:00</div>
                         <div class="timeline-dot"></div>
                         <div class="timeline-content card">
-                            <div class="event-title">Hands-on: SPR-KKR Part 1</div>
+                            <div class="event-title">Hands-on: SPR-KKR</div>
                             <div class="event-meta">Band structure tutorials</div>
                         </div>
                     </div>
@@ -734,14 +857,6 @@
                         </div>
                     </div>
 
-                     <div class="timeline-item">
-                        <div class="timeline-time">16:00 – 17:00</div>
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content card">
-                            <div class="event-title">Hands-on: SPR-KKR Part 2</div>
-                            <div class="event-meta">Band structure tutorials</div>
-                        </div>
-                    </div>
                     <div class="timeline-item">
                         <div class="timeline-time">17:30 – 19:30</div>
                         <div class="timeline-dot"></div>
@@ -785,8 +900,15 @@
                         <div class="name">Prof. Jan Minár (Online) </div>
                         <div class="aff"><strong>University of West Bohemia, Czech Republic</strong><br>SPR-KKR,
                             electronic structure theory</div>
+
+
                     </div>
                 </div>
+
+
+
+
+
 
                 <!-- Speaker 2 -->
                 <div class="speaker card">
@@ -830,19 +952,20 @@
             </div>
         </div>
 
-        
-        <!-- Contact -->
+
         <div class="card" id="Contact">
             <div class="section-heading">
                 <h2>Organizing members</h2>
-                
+
             </div>
 
             <div class="contact">
                 <div class="left">
                     <div style="font-weight:700; font-size:16px;">Hands-On Training Team</div>
                     <div style="margin-top:6px;">Dr. Sunil Wilfred D'Souza</div>
-                            
+                    <div style="margin-top:6px;">Dr. Aki Ismo Olavi Pulkkinen</div>
+                    <div style="margin-top:6px;">Dr. Ridha Eddhib</div>
+
                 </div>
                 <div class="right" style="min-width:160px;">
                     <div style="font-weight:700; font-size:16px;">Local Organizing Team</div>
@@ -854,11 +977,9 @@
 
                 </div>
             </div>
-
- </div>
         </div>
 
-<!-- Contact -->
+        <!-- Contact -->
         <div class="card" id="Contact">
             <div class="section-heading">
                 <h2>Contact & Convenor</h2>
@@ -880,8 +1001,11 @@
                     <div style="margin-top:6px;">Office: Dept. of Physics, IITB</div>
                 </div>
             </div>
+        </div>
 
- </div>
+    </div>
+
+
 
     </div>
 </body>
@@ -954,7 +1078,21 @@
                 }
             });
         });
+        document.querySelectorAll(".abstract-toggle").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const content = btn.nextElementSibling;
+                const arrow = btn.querySelector(".chev");
 
+                content.classList.toggle("open");
+                arrow.classList.toggle("open");
+
+                if (content.classList.contains("open")) {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                } else {
+                    content.style.maxHeight = "0px";
+                }
+            });
+        });
     })();
 </script>
 
